@@ -1,13 +1,16 @@
 package rewards;
 
+import config.RewardsConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+
 
 import javax.sql.DataSource;
 
 /**
- * TODO-06: Study this configuration class used for testing
+ * ✓TODO-06: Study this configuration class used for testing
  * - It contains a @Bean method that returns DataSource.
  * - It also creates and populates in-memory HSQL database tables
  *   using two SQL scripts.
@@ -16,11 +19,11 @@ import javax.sql.DataSource;
  *   the '00-rewards-common' project
  * - Do not modify this method.
  *
- * TODO-07: Import your application configuration file (RewardsConfig)
+ * ✓TODO-07: Import your application configuration file (RewardsConfig)
  * - Now the test code should have access to all the beans defined in
  *   the RewardsConfig configuration class
  *
- * TODO-08: Create a new JUnit 5 test class
+ * ✓TODO-08: Create a new JUnit 5 test class
  * - Call it RewardNetworkTests
  * - Create it in the same package this configuration class is located.
  * - Ask for a setUp() method to be generated within your IDE.
@@ -28,7 +31,7 @@ import javax.sql.DataSource;
  * NOTE: The appendices at the bottom of the course Home Page includes
  * a section on creating JUnit tests in an IDE.
  *
- * TODO-09: Make sure the setUp() method in the RewardNetworkTests class is annotated with @BeforeEach.
+ * ✓TODO-09: Make sure the setUp() method in the RewardNetworkTests class is annotated with @BeforeEach.
  * - In the setUp() method, create an application context using
  *   this configuration class - use run(..) static method of
  *   the SpringApplication class
@@ -53,6 +56,7 @@ import javax.sql.DataSource;
  *
  */
 @Configuration
+@Import(RewardsConfig.class)
 public class TestInfrastructureConfig {
 
 	/**
